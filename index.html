@@ -1,76 +1,16 @@
-<!DOCTYPE html>
 <html>
 	<head>
 		<title>Loading..</title>
-		<link rel="stylesheet" type="text/css" href="loading.css?3" />
+		<link rel="stylesheet" type="text/css" href="index.css?3"/>
 	</head>
 	<body>
 		<div id="background">
-			<img class="overlay" src="" alt="image">
-			<center>
-				<img class="logo" src="logo.png" alt="image">
-				<img class="light" src="light.png" alt="image">
-			</center>
-
-			<div class="tips">
-				<span id="tipsText">asd</span><br>
-			</div>
+			<div id="overlay"></div>
 		</div>
-
-		<script type="text/javascript">
-			window.onload = function()
-			{
-				var today = new Date();
-
-				var isHalloween = (today.getMonth() == 10 && today.getDate() >= 30) || (today.getMonth() == 11 && today.getDate() <= 14);
-
-				var isNewYear = (today.getMonth() == 12 && today.getDate() >= 14) || (today.getMonth() == 1 && today.getDate() <= 14);
-
-				if (isNewYear) {
-					document.getElementsByClassName("overlay")[0].src = "overlay_newyear.png";
-					document.getElementsByClassName("light")[0].src = "light_newyear.png";
-					document.getElementsByClassName("logo")[0].src = "logo_newyear.png";
-				} else if (isHalloween) {
-					document.getElementsByClassName("overlay")[0].src = "overlay_hallowin.png";
-					document.getElementsByClassName("light")[0].src = "light_hallowin.png";
-					document.getElementsByClassName("logo")[0].src = "logo_hallowin.png";
-				} else {
-					document.getElementsByClassName("overlay")[0].style.visibility = "hidden";
-					document.getElementsByClassName("light")[0].src = "light.png";
-					document.getElementsByClassName("logo")[0].src = "logo.png";
-				}
-			}
-
-			function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, lang, gamemodeNice )
-			{
-			}
-
-			function DownloadingFile( file )
-			{
-			}
-
-			function SetStatusChanged( status )
-			{
-			}
-
-			function changeTip() {
-				var randomTip = [
-					"Совет: Вы можете улучшать ключ-карты\nиспользуя объект SCP-914.",
-					"Счастье для всех даром\nи пусть никто не уйдет обиженным!",
-					"Совет: При игре за Ученого постарайтесь избегать встреч\nс сотрудниками Класса-Д.",
-					"Совет: Играя за Класс-Д постарайтесь раздобыть оружие\nчто бы с его помощью шантажировать Ученых.",
-					"Совет: Ворота Б изначально заблокированы,\n возможно вам понадобится посторонняя помощь что бы открыть их."
-				];
-				var tipId = Math.floor(Math.random() * randomTip.length);
-
-				document.getElementById("tipsText").textContent = randomTip[tipId];
-			}
-
-			changeTip()
-
-			if (document?.startViewTransition) {
-				setInterval(() => {document.startViewTransition(() => {changeTip()})}, 7500)
-			}
-		</script>
+		<div id="container">
+			<center>
+				<img src='img/logo.png' class="bounce"/>
+			</center>
+		</div>
 	</body>
 </html>
